@@ -39,6 +39,11 @@ class ProductService {
         return null
     }
 
+    async deleteProduct(id:number): Promise<boolean>{
+        const result = await db.query<ResultSetHeader>('DELETE FROM Products WHERE id = ?', id)
+        return result.affectedRows > 0 // if affectedRows is true, then return true. Otherwise, return false.
+    }
+
 }
 
 export default new ProductService()
