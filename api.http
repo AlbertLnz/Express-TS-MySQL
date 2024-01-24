@@ -15,3 +15,13 @@ Content-Type: application/json
     "description": "Desktop for children",
     "price": 62.35
 }
+
+### PUT: Update 1 product
+PUT http://localhost:3000/products/4
+Content-Type: application/json
+
+{
+    "price": 6.25
+}
+
+###
