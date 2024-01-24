@@ -29,6 +29,16 @@ class ProductService {
         return null
     }
 
+    async putProduct(data:Product, id:number): Promise<Product | null>{
+        const result = await db.query<ResultSetHeader>('UPDATE Products SET ? WHERE id = ?', [data, id])
+
+        if(result.affectedRows){
+            return await this.getProductById(id)
+        }
+
+        return null
+    }
+
 }
 
 export default new ProductService()
