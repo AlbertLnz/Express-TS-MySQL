@@ -5,3 +5,13 @@ GET http://localhost:3000/products
 
 ### GET: Get 1 product by his id
 GET http://localhost:3000/products/2
+
+### POST: Create 1 product
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "code": "P011",
+    "description": "Desktop for children",
+    "price": 62.35
+}
