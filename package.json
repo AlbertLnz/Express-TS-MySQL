@@ -1,0 +1,25 @@
+{
+  "name": "api-express-ts-mysql",
+  "version": "1.0.0",
+  "description": "API Expres-TS-MySQL",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertLnz/Express-TS-MySQL.git"
+  },
+  "keywords": [
+    "API",
+    "Express",
+    "TS",
+    "MySQL"
+  ],
+  "author": "AlbertLnz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlbertLnz/Express-TS-MySQL/issues"
+  },
+  "homepage": "https://github.com/AlbertLnz/Express-TS-MySQL#readme"
+}
