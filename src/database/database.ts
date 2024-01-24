@@ -10,3 +10,4 @@ const config:ConnectionOptions = {
     queueLimit: 0
 }
 
+const pool = mysql2.createPool(config)
