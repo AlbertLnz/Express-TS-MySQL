@@ -13,6 +13,22 @@ class ProductController {
         }
     }
 
+    async getProductById(req: Request, res: Response){
+        try {
+            const id = Number(req.params['id'])
+            const product = await productService.getProductById(id)
+            
+            if(product){
+                sendSuccess(res, product)
+            }else{
+                sendError(res, 'Product Not Found', 404)
+            }
+
+        } catch (error:any) {
+            sendError(res, error.message)
+        }
+    }
+
 }
 
 export default new ProductController()
