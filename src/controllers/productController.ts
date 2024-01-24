@@ -45,6 +45,23 @@ class ProductController {
         }
     }
 
+    async putProduct(req: Request, res: Response){
+        try {
+            const data = req.body // need to validate!
+            const id = Number(req.params['id'])
+            const product = await productService.putProduct(data, id)
+            
+            if(product){
+                sendSuccess(res, product)
+            }else{
+                sendError(res, 'Product Not Found', 404)
+            }
+
+        } catch (error:any) {
+            sendError(res, error.message)
+        }
+    }
+
 }
 
 export default new ProductController()
