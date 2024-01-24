@@ -1,10 +1,12 @@
 import express from 'express'
+import db from './database/database'
 
 const app = express()
 app.use(express.json())
 
-app.get('/', (_req, res) => {
-    res.send('Hello World!')
+app.get('/', async (_req, res) => {
+    const results = await db.query('SELECT * FROM Products')
+    res.json(results)
 })
 
 
