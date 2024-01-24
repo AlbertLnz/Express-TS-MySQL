@@ -19,6 +19,16 @@ class ProductService {
         return null
     }
 
+    async postProduct(data:Product): Promise<Product | null>{
+        const result = await db.query<ResultSetHeader>('INSERT INTO Products SET ?', data)
+
+        if(result.insertId){
+            return await this.getProductById(result.insertId)
+        }
+
+        return null
+    }
+
 }
 
 export default new ProductService()
