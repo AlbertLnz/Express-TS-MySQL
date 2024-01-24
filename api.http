@@ -16,7 +16,7 @@ Content-Type: application/json
     "price": 62.35
 }
 
-### PUT: Update 1 product
+### PUT: Update 1 product by hid id
 PUT http://localhost:3000/products/4
 Content-Type: application/json
 
@@ -24,4 +24,5 @@ Content-Type: application/json
     "price": 6.25
 }
 
-###
+### DELETE: Delete 1 product by his id
+DELETE http://localhost:3000/products/6
