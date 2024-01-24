@@ -29,6 +29,22 @@ class ProductController {
         }
     }
 
+    async postProduct(req: Request, res: Response){
+        try {
+            const data = req.body // need to validate!
+            const product = await productService.postProduct(data)
+            
+            if(product){
+                sendSuccess(res, product)
+            }else{
+                sendError(res, 'Product Not Created', 422) // 422 -> Unprocessable Entity
+            }
+
+        } catch (error:any) {
+            sendError(res, error.message)
+        }
+    }
+
 }
 
 export default new ProductController()
