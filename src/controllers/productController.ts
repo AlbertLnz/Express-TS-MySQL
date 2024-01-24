@@ -62,6 +62,22 @@ class ProductController {
         }
     }
 
+    async deleteProduct(req: Request, res: Response){
+        try {
+            const id = Number(req.params['id'])
+            const itsDeleted = await productService.deleteProduct(id)
+            
+            if(itsDeleted){
+                sendSuccess(res, {})
+            }else{
+                sendError(res, 'Product Not Found', 404)
+            }
+
+        } catch (error:any) {
+            sendError(res, error.message)
+        }
+    }
+
 }
 
 export default new ProductController()
