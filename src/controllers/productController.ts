@@ -1,6 +1,6 @@
 import { Request, Response} from 'express'
 import productService from '../services/productService'
-import { sendError, sendSuccess } from 'utils/requestHandlers'
+import { sendError, sendSuccess } from '../utils/requestHandlers'
 
 class ProductController {
 

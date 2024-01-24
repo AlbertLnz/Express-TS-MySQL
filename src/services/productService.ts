@@ -1,5 +1,5 @@
 import db from '../database/database'
-import { Product } from 'models/product'
+import { Product } from '../models/product'
 
 class ProductService {
 
